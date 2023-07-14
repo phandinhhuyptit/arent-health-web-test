@@ -1,34 +1,146 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Table of Contents
 
-## Getting Started
+- [Table of Contents](#table-of-contents)
+- [Technologies](#technologies)
+- [Project Structure](#project-structure)
+- [Setup / Installation](#setup--installation)
 
-First, run the development server:
+# Health Application
+## Requirements
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+- NodeJS 16+ (latest LTS, which should be 18 by now, is recommended)
+
+## Quick Overview
+
+### Problem
+
+Arent3d's assessment is not complicated, but the amount of things that need to be solved is considerable. It must:
+
+- Comply with the design (color palette, font families,...)
+- There are three screens with different kinds of component.
+- It must emulate real-world use cases such as click-to-scroll, data filtering, data fetching,...
+- While it's not required, but mobile-screen responsibility is a plus, so I decided to implement it anyway.
+- It has charts (to be more precise, Line Chart), and it should display some data, with filters.
+
+### Solution
+- I decided to use **NextJS**. So I don't need to care about setting up routing, also Vercel can host it for me.
+- I created **Mock API** requests to fetch mock data and display them on the pages.
+- I used **Tailwind CSS** to style the application. To simulate real API requests, 
+
+### \*\*\* **Bonus features** \*\*\* :
+
+- On Top page, implement **filter** functions that allow users to filter meals by clicking on categories: Morning, Lunch, Dinner, and Snack.
+- Implement **mock APIs** that simulate real API requests and return mock data for the following APIs:
+
+  - Achievement rate API
+  - Body record graph API
+  - Meal history API
+  - My exercise API
+  - My diary API
+  - Article API
+
+- Display a **loading spinner** while fetching data from each API for every widget.
+- Make all three pages **responsive** on all screen sizes.
+- Write a few **test cases** to demonstrate the testing aspect.
+- Make **load more** data diary,article,meal history API when user click button
+- Custom **404 page** when the route not correct  
+
+### Demo
+
+Github Repo: [Repo link](https://github.com/phandinhhuyptit/arent-health-web-test)
+
+To verify that the application is working as intended, please visit these links (or you can run locally - see below):
+
+- [Top page](https://arent-health-web-test-3bje.vercel.app/)
+- [My Record Page](https://arent-health-web-test-3bje.vercel.app/my-record)
+- [Column Page](https://arent-health-web-test-3bje.vercel.app/column)
+
+[Back to Table of Contents](#table-of-contents)
+
+## Technologies
+
+### Core
+
+- **React (18.2.0)**
+- **NextJS**
+- **TypeScript**
+
+### Styling
+
+- **Tailwind CSS**: used for styling components, page layout,...
+
+### Testing
+
+- **React testing library**: React component testing
+- **Jest**: utility testing
+
+### Hosting and Deployment
+
+- **Vercel**: hosting & continuous deployment
+
+[Back to Table of Contents](#table-of-contents)## Project Structure
+## Technologies
+
+```
+api
+└── mockData         ---> Mock data (meals, diary, graph data,...)      
+public               ---> Contains images, icons, etc.
+├── icons
+└── images
+hooks                ---> Reusable custom hooks (e.g API fetch)
+layouts              ---> Layout components defining common structure of a page which then used in all pages
+components           ---> Components used in a page 
+├── PageAComponent
+|── PageBComponent 
+└── PageCComponent
+shared               ---> Components shared across all pages
+services             ---> Mock API fetch mock data
+├── images           
+pages
+├── pageA            ---> A page of the application (correspond to a route)
+|   └── index.tsx
+├── pageB
+|    └── index.tsx
+types                ---> Contains custom Typescript typing definitions.
+├── api.types.ts  
+├── data.types.ts
+styles               ---> Contains custom Css for components and pages
+├── global.css       
+utils
+├── moduleA          ---> Util module for important calculation
+├──  tests           ---> Unit tests for each module
+|       ├── fn1.test.ts
+|       ├── fn2.test.ts
+    ...
+tailwind.config.js   ---> define global style variables such as colors + plugins
+README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[Back to Table of Contents](#table-of-contents)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Setup / Installation
 
-## Learn More
+`node` and `npm` (or `yarn`) are required to be installed on your machine.
 
-To learn more about Next.js, take a look at the following resources:
+Clone this repository.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+At the root directory:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Install packages: `yarn install` (or npm install)
 
-## Deploy on Vercel
+Then, run the development server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+yarn dev
+# or
+npm run dev
+# or
+npm dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Note
+
+_It usually run on port 3000. Access localhost:3000 for the dev website_
+
+I also include a Dockerfile for Docker deployment, if you are into that as well. It runs on port 4173 by default so you might want to forward the port later.
