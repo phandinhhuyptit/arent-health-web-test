@@ -20,3 +20,53 @@ body {
   min-height: 100vh;
 }
 
+.progress-item {
+  width: 200px;
+  height: 200px;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.progress-item > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  font-size: 25px;
+  width: 80%;
+  text-align: center;
+  color: white;
+}
+.progress-item > span small {
+  font-size: 18px;
+}
+.progress-item .circle-bg {
+  fill: none;
+}
+.progress-item .circular-chart.white .circle {
+  stroke: #fff;
+}
+.progress-item .circle {
+  fill: none;
+  stroke-width: 1px;
+  -webkit-animation: progress 1s ease-out forwards;
+  animation: progress 1s ease-out forwards;
+}
+
+.progress-item .percentage {
+  fill: #fff;
+  font-family: sans-serif;
+  font-size: 0.5em;
+  text-anchor: middle;
+  visibility: hidden;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+

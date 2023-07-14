@@ -1,6 +1,11 @@
-
+import { Overview, MealHistory } from "@/components/top-page";
 const Home = () => {
-  return <div>Hello World</div>;
+  return (
+    <>
+      <Overview />
+      <MealHistory />
+    </>
+  );
 };
 
 export default Home;

@@ -1,18 +1,105 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./layouts/**/*.{js,ts,jsx,tsx}",
+    "./shared/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      xs: "420px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
+      colors: {
+        primary: {
+          300: "#FFCC21",
+          400: "#FF963C",
+          500: "#EA6C00",
+        },
+        golden: {
+          100: "#EFECE0",
+          200: "#E5DDC1",
+          300: "#E0D19F",
+          400: "#E2CA7B",
+          500: "#ECC851",
+          600: "#FFCC21",
+          700: "#E6B81D",
+          800: "#BF9D2A",
+          900: "#9F8633",
+          1000: "#857338",
+        },
+        orange: {
+          100: "#FEFEFD",
+          200: "#F1E6DD",
+          300: "#E9D0BA",
+          400: "#E8BB95",
+          500: "#EFA86C",
+          600: "#FF963C",
+          700: "#E88733",
+          800: "#D1792E",
+          900: "#AE6E38",
+          1000: "#92643D",
+        },
+        "dark-orange": {
+          100: "#DCCEC3",
+          200: "#D2BBA7",
+          300: "#CEA989",
+          400: "#CF9869",
+          500: "#D68845",
+          600: "#E6791C",
+          700: "#EA6C00",
+          800: "#BE6315",
+          900: "#9B5A22",
+          1000: "#81522A",
+        },
+        teal: {
+          100: "#F9FCFB",
+          200: "#D8EFE9",
+          300: "#B5E9DA",
+          400: "#8FE9D0",
+          500: "#7BD7BE",
+          600: "#6CC4AC",
+          700: "#60B29B",
+          800: "#599D8A",
+          900: "#57877A",
+          1000: "#52766C",
+        },
+        secondary: {
+          300: "#8FE9D0",
+        },
+        light: {
+          100: "#FFFFFF",
+        },
+        dark: {
+          500: "#414141",
+          600: "#2E2E2E",
+        },
+        gray: {
+          100: "#737373",
+          200: "#696969",
+          300: "#5F5F5F",
+          400: "#777777",
+          500: "#4F4F4F",
+          600: "#484848",
+          700: "#414141",
+          800: "#3A3A3A",
+          900: "#353535",
+          1000: "#2F2F2F",
+          1100: "#575757",
+        },
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },
   plugins: [],
-}
+};
