@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+html,
+body {
+  font-family: Noto Sans JP, sans-serif;
+  color: #000;
+  line-height: 1.55;
+  font-size: 16px;
+  min-height: 100vh;
+}
+
