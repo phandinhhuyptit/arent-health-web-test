@@ -44,6 +44,7 @@ Arent3d's assessment is not complicated, but the amount of things that need to b
 - Write a few **test cases** to demonstrate the testing aspect.
 - Make **load more** data diary,article,meal history API when user click button
 - Custom **404 page** when the route not correct  
+- Make SEO for all pages  
 
 ### Demo
 
