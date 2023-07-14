@@ -57,7 +57,7 @@ const Overview = () => {
     <section>
       <div className="flex flex-wrap lg:flex-row">
         <div className="w-full h-[350px] lg:h-[auto] lg:w-[45%] flex items-center overflow-hidden relative justify-center sm:pt-[26px] sm:pb-[26px]">
-          <div className="lg:absolute sm:w-full bg-gradient-to-br from-yellow-300/10 to-yellow-500/30 saturate-150 brightness-100">
+          <div className="lg:absolute w-full bg-gradient-to-br from-yellow-300/10 to-yellow-500/30 saturate-150 brightness-100">
             <Image
               className="h-full w-full object-cover mix-blend-soft-light"
               src={MealImages.mealImg1}
