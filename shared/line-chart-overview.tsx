@@ -13,7 +13,7 @@ interface DataPoint {
 }
 
 interface LineChartProps {
-  data: any[];
+  data: unknown[];
   width: string | number;
   height: number | string;
   colors: string[];

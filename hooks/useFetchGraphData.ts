@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import API from "@/services/api-frontend";
+import { dataUtils } from "@/utils/utils-data";
 
 export type ChartType = "day" | "week" | "month" | "year";
 
@@ -24,7 +25,23 @@ const useFetchGraphData = () => {
     fetchGraphDataAPI();
   }, []);
 
-  return { graphData, loading  };
+  const refetch = (type: ChartType ) => {
+    setGraphData(
+      graphData.map((d: any) => {
+        const newD = {
+          ...d,
+          c1: dataUtils.randomIntFromInterval(500, 3000),
+          c2: dataUtils.randomIntFromInterval(500, 3000),
+          c3: dataUtils.randomIntFromInterval(500, 4000),
+        };
+        return newD;
+      })
+    );  
+  } 
+
+
+
+  return { graphData, loading ,refetch };
 };
 
 export default useFetchGraphData;

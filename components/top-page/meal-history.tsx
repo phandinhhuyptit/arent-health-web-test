@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import React from "react";
+import clsx from "clsx";
 
 // Icons
 import { Icons } from "@/public/icons";
@@ -24,14 +25,15 @@ interface Props {
 }
 
 const FilterButtons: React.FC<Props> = ({ setFilter, filter }) => {
+  const brightness = "brightness-95 hover:brightness-[1.16]";
+  const grayscale = "grayscale";
   return (
     <div className="flex flex-wrap justify-center gap-16">
       <Image
-        className={`${
-          filter === "Morning" || filter === ""
-            ? "brightness-95 hover:brightness-[1.16]"
-            : "grayscale"
-        } transition duration-200 ease-in-out filter  hover:cursor-pointer`}
+        className={clsx(
+          filter === "Morning" || filter === "" ? brightness : grayscale,
+          "transition duration-200 ease-in-out filter  hover:cursor-pointer"
+        )}
         src={Icons.morningHex}
         alt="morning-hex"
         onClick={() => {
@@ -40,11 +42,10 @@ const FilterButtons: React.FC<Props> = ({ setFilter, filter }) => {
         }}
       />
       <Image
-        className={`${
-          filter === "Lunch" || filter === ""
-            ? "brightness-95 hover:brightness-[1.16]"
-            : "grayscale"
-        } transition duration-200 ease-in-out filter  hover:cursor-pointer`}
+        className={clsx(
+          filter === "Lunch" || filter === "" ? brightness : grayscale,
+          "transition duration-200 ease-in-out filter  hover:cursor-pointer"
+        )}
         src={Icons.lunchHex}
         alt="lunch-hex"
         onClick={() => {
@@ -53,11 +54,10 @@ const FilterButtons: React.FC<Props> = ({ setFilter, filter }) => {
         }}
       />
       <Image
-        className={`${
-          filter === "Dinner" || filter === ""
-            ? "brightness-95 hover:brightness-[1.16]"
-            : "grayscale"
-        } transition duration-200 ease-in-out filter  hover:cursor-pointer`}
+        className={clsx(
+          filter === "Dinner" || filter === "" ? brightness : grayscale,
+          "transition duration-200 ease-in-out filter  hover:cursor-pointer"
+        )}
         src={Icons.dinnerHex}
         alt="dinner-hex"
         onClick={() => {
@@ -66,11 +66,10 @@ const FilterButtons: React.FC<Props> = ({ setFilter, filter }) => {
         }}
       />
       <Image
-        className={`${
-          filter === "Snack" || filter === ""
-            ? "brightness-95 hover:brightness-[1.16]"
-            : "grayscale"
-        } transition duration-200 ease-in-out filter  hover:cursor-pointer`}
+        className={clsx(
+          filter === "Snack" || filter === "" ? brightness : grayscale,
+          "transition duration-200 ease-in-out filter  hover:cursor-pointer"
+        )}
         src={Icons.snackHex}
         alt="snack-hex"
         onClick={() => {
@@ -108,7 +107,7 @@ const MealCard = ({ image, date, month, type }: MealCardProps) => {
 };
 
 const MealHistory = () => {
-  const { mealList, loading,loadMore } = useFetchMealHistory();
+  const { mealList, loading, loadMore } = useFetchMealHistory();
   const [filter, setFilter] = useState<TagType>("");
   const [filteredMealList, setFilteredMealList] = useState<Meal[] | null>(
     mealList
@@ -121,7 +120,6 @@ const MealHistory = () => {
       const filteredMealList = mealList
         ? mealList.filter((meal) => meal.type === filter)
         : [];
-        console.log("filteredMealList",filteredMealList)
       setFilteredMealList(filteredMealList);
     }
   }, [filter, mealList]);
@@ -131,7 +129,7 @@ const MealHistory = () => {
       <div className="mt-8 mb-16 space-y-6">
         <FilterButtons filter={filter} setFilter={setFilter} />
         <div className="flex flex-wrap justify-center md:justify-stretch gap-2">
-          {loading && !mealList  ? (
+          {loading && !mealList ? (
             <LoadingSpinner />
           ) : (
             filteredMealList?.map((meal) => {
@@ -150,7 +148,11 @@ const MealHistory = () => {
           )}
         </div>
         {mealList && mealList.length >= 8 && (
-          <SeeMoreButton loading={loading} loadMore={loadMore} text={"記録をもっと見る"} />
+          <SeeMoreButton
+            loading={loading}
+            loadMore={loadMore}
+            text={"記録をもっと見る"}
+          />
         )}
       </div>
     </Container>
