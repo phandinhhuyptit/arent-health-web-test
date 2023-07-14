@@ -79,8 +79,8 @@ To verify that the application is working as intended, please visit these links 
 - **Vercel**: hosting & continuous deployment
 
 [Back to Table of Contents](#table-of-contents)## Project Structure
-## Technologies
 
+## Project-structure
 ```
 api
 └── mockData         ---> Mock data (meals, diary, graph data,...)      
