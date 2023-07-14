@@ -78,12 +78,13 @@ To verify that the application is working as intended, please visit these links 
 
 - **Vercel**: hosting & continuous deployment
 
-[Back to Table of Contents](#table-of-contents)## Project Structure
+[Back to Table of Contents](#table-of-contents)
 
 ## Project-structure
 ```
 api
-└── mockData         ---> Mock data (meals, diary, graph data,...)      
+├── mockData         ---> Mock data (meals, diary, graph data,...)      
+├── services         ---> Mock API fetch mock data
 public               ---> Contains images, icons, etc.
 ├── icons
 └── images
@@ -92,10 +93,11 @@ layouts              ---> Layout components defining common structure of a page 
 components           ---> Components used in a page 
 ├── PageAComponent
 |── PageBComponent 
-└── PageCComponent
+├── PageCComponent
 shared               ---> Components shared across all pages
-services             ---> Mock API fetch mock data
-├── images           
+├── ComponentA
+|── ComponentB
+├── ComponentC     
 pages
 ├── pageA            ---> A page of the application (correspond to a route)
 |   └── index.tsx

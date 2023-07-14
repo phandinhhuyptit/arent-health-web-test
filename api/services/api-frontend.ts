@@ -5,7 +5,7 @@ import {
   articleList,
   exerciseList,
   graphData,
-} from "@/api/mockData";
+} from "@/api/mock-data";
 
 // Types
 import { AchievementRate, Meal, Diary, Article, Exercise } from "@/types/data.types";

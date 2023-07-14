@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Meal } from "@/types/data.types";
-import API from "@/services/api-frontend";
+import API from "@/api/services/api-frontend";
 import { v4 as uuidv4 } from 'uuid';
 const useFetchMealHistory = () => {
   const [mealList, setMealList] = useState<Meal[] | null>(null);

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { AchievementRate } from "@/types/data.types";
-import API from "@/services/api-frontend";
+import API from "@/api/services/api-frontend";
 
 const useFetchAchievementRate = () => {
   const [achievementRate, setAchievementRate] =

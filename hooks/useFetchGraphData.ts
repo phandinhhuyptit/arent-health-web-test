@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import API from "@/services/api-frontend";
+import API from "@/api/services/api-frontend";
 import { dataUtils } from "@/utils/utils-data";
 
 export type ChartType = "day" | "week" | "month" | "year";
